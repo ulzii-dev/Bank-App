@@ -7,6 +7,14 @@
 
 import UIKit
 
+protocol LoginViewControllerDelegate: AnyObject {
+    func loggedIn()
+}
+
+protocol LogoutViewControllerDelegate: AnyObject {
+    func loggedOut()
+}
+
 class LoginViewController: UIViewController {
     
     let titleLabel = UILabel()
@@ -15,6 +23,8 @@ class LoginViewController: UIViewController {
     let loginView = LoginView()
     let signInButton = UIButton()
     let errorMessageLabel = UILabel()
+    
+    weak var delegate: LoginViewControllerDelegate?
     
     var username: String? {
         return loginView.usernameTextField.text
@@ -28,6 +38,11 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         style()
         layout()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        signInButton.configuration?.showsActivityIndicator = false
     }
 }
 
@@ -126,6 +141,7 @@ extension LoginViewController {
         
         if username == "Dev" && password == "pass" {
             signInButton.configuration?.showsActivityIndicator = true
+            delegate?.loggedIn()
         } else {
             configureView(withMessage: "Incorrect credentials!")
             return

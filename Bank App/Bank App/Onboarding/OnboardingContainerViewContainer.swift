@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol OnboardingContainerViewControllerDelegate: AnyObject {
+    func onboardingDone()
+}
+
 class OnboardingContainerViewController: UIViewController {
 
     let pageViewController: UIPageViewController
@@ -14,16 +18,14 @@ class OnboardingContainerViewController: UIViewController {
     var currentVC: UIViewController
     let closeButton = UIButton(type: .system)
     
+    weak var delegate: OnboardingContainerViewControllerDelegate?
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         self.pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         
-//        let page1 = OnboardingViewController(heroImageName: "delorean", titleText: "Bankey is faster, easier to use, and has a brand new look and feel that will make you feel like you are back in the 80s.")
-//        let page2 = OnboardingViewController(heroImageName: "world", titleText: "Move your money around the world quickly and securely.")
-//        let page3 = OnboardingViewController(heroImageName: "thumbs", titleText: "Learn more at www.bankey.com.")
-        
-        let page1 = page1()
-        let page2 = page2()
-        let page3 = page3()
+        let page1 = OnboardingViewController(onboardingImageName: "delorean", onboardingText: "Bankey is faster, easier to use, and has a brand new look and feel that will make you feel like you are back in the 80s.")
+        let page2 = OnboardingViewController(onboardingImageName: "world", onboardingText: "Move your money around the world quickly and securely.")
+        let page3 = OnboardingViewController(onboardingImageName: "thumbs", onboardingText: "Learn more at www.bankey.com.")
         
         pages.append(page1)
         pages.append(page2)
@@ -119,7 +121,7 @@ extension OnboardingContainerViewController: UIPageViewControllerDataSource {
 // MARK: - Actions
 extension OnboardingContainerViewController {
     @objc func closeTapped(_ sender: UIButton) {
-        // TODO
+        delegate?.onboardingDone()
     }
 }
 

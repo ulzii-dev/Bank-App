@@ -14,6 +14,8 @@
 		6EB50FFA2B17CC8B0007BE9F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB50FF92B17CC8B0007BE9F /* LoginView.swift */; };
 		6EDEA59C2B19149300D81A25 /* OnboardingContainerViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEA59B2B19149300D81A25 /* OnboardingContainerViewContainer.swift */; };
 		6EDEA59E2B19217300D81A25 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEA59D2B19217300D81A25 /* OnboardingViewController.swift */; };
+		6EDEA5CB2B34D6A400D81A25 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEA5CA2B34D6A400D81A25 /* LogoutViewController.swift */; };
+		6EDEA5CE2B34F8BB00D81A25 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEA5CD2B34F8BB00D81A25 /* LocalState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		6EB50FF92B17CC8B0007BE9F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		6EDEA59B2B19149300D81A25 /* OnboardingContainerViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewContainer.swift; sourceTree = "<group>"; };
 		6EDEA59D2B19217300D81A25 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		6EDEA5CA2B34D6A400D81A25 /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
+		6EDEA5CD2B34F8BB00D81A25 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +62,10 @@
 		6EB50FE22B178CF00007BE9F /* Bank App */ = {
 			isa = PBXGroup;
 			children = (
+				6EDEA5CC2B34F8B200D81A25 /* Utils */,
 				6EDEA59A2B19147500D81A25 /* Onboarding */,
 				6EB50FF82B17CC7B0007BE9F /* Login */,
+				6EDEA5C92B34D69100D81A25 /* LogOut */,
 				6EB50FF72B17CC0B0007BE9F /* Files */,
 				6EB50FE32B178CF00007BE9F /* AppDelegate.swift */,
 			);
@@ -92,6 +98,22 @@
 				6EDEA59D2B19217300D81A25 /* OnboardingViewController.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		6EDEA5C92B34D69100D81A25 /* LogOut */ = {
+			isa = PBXGroup;
+			children = (
+				6EDEA5CA2B34D6A400D81A25 /* LogoutViewController.swift */,
+			);
+			path = LogOut;
+			sourceTree = "<group>";
+		};
+		6EDEA5CC2B34F8B200D81A25 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6EDEA5CD2B34F8BB00D81A25 /* LocalState.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,9 +187,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EB50FFA2B17CC8B0007BE9F /* LoginView.swift in Sources */,
+				6EDEA5CE2B34F8BB00D81A25 /* LocalState.swift in Sources */,
 				6EDEA59C2B19149300D81A25 /* OnboardingContainerViewContainer.swift in Sources */,
 				6EDEA59E2B19217300D81A25 /* OnboardingViewController.swift in Sources */,
 				6EB50FE82B178CF00007BE9F /* LoginViewController.swift in Sources */,
+				6EDEA5CB2B34D6A400D81A25 /* LogoutViewController.swift in Sources */,
 				6EB50FE42B178CF00007BE9F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
